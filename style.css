@@ -1,0 +1,156 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  background: #87ceeb;
+  font-family: Arial, sans-serif;
+}
+
+canvas {
+  display: block;
+}
+
+#loading, #menu {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  color: white;
+  background: linear-gradient(#368fc9, #a2d77b);
+  z-index: 10;
+  padding: 20px;
+}
+
+#loading {
+  z-index: 20;
+}
+
+#menu {
+  display: none;
+  background: linear-gradient(#0007, #0009);
+}
+
+h1 {
+  font-size: clamp(30px, 7vw, 60px);
+  text-shadow: 3px 4px #263d25;
+}
+
+button {
+  cursor: pointer;
+  color: white;
+  background: #558b2f;
+  border: 2px solid #e6eddd;
+  border-radius: 5px;
+  padding: 12px 18px;
+  font-weight: bold;
+}
+
+button:hover {
+  background: #78a943;
+}
+
+#hud {
+  display: none;
+  position: fixed;
+  inset: 0;
+  color: white;
+  text-shadow: 1px 2px 3px black;
+  pointer-events: none;
+}
+
+#stats, #target {
+  position: absolute;
+  top: 12px;
+  padding: 10px;
+  background: #17251a99;
+  border-radius: 6px;
+}
+
+#stats {
+  left: 10px;
+}
+
+#target {
+  right: 10px;
+}
+
+#crosshair {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 27px;
+}
+
+#help {
+  position: absolute;
+  left: 10px;
+  bottom: 90px;
+  padding: 9px;
+  border-radius: 5px;
+  background: #17251a99;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+#hotbar {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 5px;
+  pointer-events: auto;
+}
+
+.slot {
+  min-width: 54px;
+  height: 56px;
+  background: #222b;
+  border: 2px solid #aaa;
+  border-radius: 5px;
+  color: white;
+  font-size: 11px;
+}
+
+.slot.active {
+  border: 3px solid white;
+  background: #678d45dd;
+}
+
+#notice {
+  display: none;
+  position: absolute;
+  top: 22%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #17251acc;
+  padding: 10px 16px;
+  border-radius: 6px;
+}
+
+@media (max-width: 600px) {
+  #help {
+    font-size: 10px;
+    bottom: 75px;
+  }
+
+  .slot {
+    min-width: 42px;
+    height: 48px;
+    font-size: 9px;
+    padding: 3px;
+  }
+
+  #stats, #target {
+    font-size: 11px;
+    padding: 7px;
+  }
+}
